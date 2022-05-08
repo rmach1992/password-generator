@@ -9,15 +9,22 @@
     <script src="javascript.js" defer></script>
 </head>
 <body>
-    <span>Generate a</span>
+    <span id="title1">Generate a</span>
     <br>
-    <span>random password</span>
+    <span id="title2">random password</span>
     <p>Never use an insecure password again</p>
+    <p>Please select a password length</p>
+    <div class="slidecontainer">
+        <input type="range" min="8" max="32" value="16" class="slider" id="myRange">
+        <p>Password Length: <span id="demo"></span></p>
+    </div>
     <button onclick="generatePasswords()"><img src="images/bolt.png" alt="lightning bolt"> Generate passwords</button>
     <hr class="solid">
-    <div id="password-1"><img src="images/dots.png" alt="dots"></div>
-    <div id="password-2"><img src="images/dots.png" alt="dots"></div>
-    <div id="password-3"><img src="images/dots.png" alt="dots"></div>
-    <div id="password-4"><img src="images/dots.png" alt="dots"></div>
+    <div id="passwordContainer">
+        <div id="password-1"><img src="images/dots.png" alt="dots"></div>
+        <div id="password-2"><img src="images/dots.png" alt="dots"></div>
+        <div id="password-3"><img src="images/dots.png" alt="dots"></div>
+        <div id="password-4"><img src="images/dots.png" alt="dots"></div>
+    </div>
 </body>
 </html>
