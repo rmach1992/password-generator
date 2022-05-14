@@ -12,15 +12,15 @@ let output = document.getElementById("demo");
 //Generates passwords and resets the already generated passwords
 function generatePasswords() {
     let passwordLength = slider.value
-    password1.textContent = ""
-    password2.textContent = ""
-    password3.textContent = ""
-    password4.textContent = ""
+    password1.value = ""
+    password2.value = ""
+    password3.value = ""
+    password4.value = ""
     for (let i = 0; i < passwordLength; i++) {
-        password1.textContent += randomizeChar()
-        password2.textContent += randomizeChar()
-        password3.textContent += randomizeChar()
-        password4.textContent += randomizeChar()
+        password1.value += randomizeChar()
+        password2.value += randomizeChar()
+        password3.value += randomizeChar()
+        password4.value += randomizeChar()
     }
 }
 
@@ -36,3 +36,18 @@ slider.oninput = function() {
 }
 
 //stretch: 1-click copy password to the clipboard (hint: use <input type="text"> to display the password options)
+function myFunction(i) {
+    let copyText = document.getElementById(`password-${1}`);
+
+    console.log(copyText)
+  
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+  
+     /* Copy the text inside the text field */
+    navigator.clipboard.writeText(copyText.value);
+  
+    /* Alert the copied text */
+    alert("Copied the text: " + copyText.value);
+  }
