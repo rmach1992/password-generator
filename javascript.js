@@ -1,13 +1,15 @@
 let chars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q"
 ,"r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K"
 ,"L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",1,2,3,4,5,6,7,8,9,
-0,"!","@","#","$","%","^","&","*","(",")"]
+0]
+let specialChar = ["!","@","#","$","%","^","&","*"]
 let password1 = document.getElementById("password-1")
 let password2 = document.getElementById("password-2")
 let password3 = document.getElementById("password-3")
 let password4 = document.getElementById("password-4")
 let slider = document.getElementById("myRange");
 let output = document.getElementById("demo");
+const specialSelect = document.querySelector("#accept")
 
 //Generates passwords and resets the already generated passwords
 function generatePasswords() {
@@ -16,6 +18,15 @@ function generatePasswords() {
     password2.value = ""
     password3.value = ""
     password4.value = ""
+    if (specialSelect.checked === true) {
+        chars.push(...specialChar)
+    }
+    else if (specialSelect.checked === false) {
+        chars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q"
+        ,"r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K"
+        ,"L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",1,2,3,4,5,6,7,8,9,
+        0]
+    }
     for (let i = 0; i < passwordLength; i++) {
         password1.value += randomizeChar()
         password2.value += randomizeChar()
@@ -35,11 +46,8 @@ slider.oninput = function() {
   output.innerHTML = this.value;
 }
 
-//stretch: 1-click copy password to the clipboard (hint: use <input type="text"> to display the password options)
-function myFunction(i) {
+function copyPassword(i) {
     let copyText = document.getElementById(`password-${1}`);
-
-    console.log(copyText)
   
     /* Select the text field */
     copyText.select();
@@ -51,3 +59,4 @@ function myFunction(i) {
     /* Alert the copied text */
     alert("Copied the text: " + copyText.value);
   }
+

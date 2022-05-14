@@ -18,17 +18,19 @@
         <input type="range" min="8" max="32" value="16" class="slider" id="myRange">
         <p>Password Length: <span id="demo"></span></p>
     </div>
+    <input type="checkbox" id="accept" name="accept" value="yes">  
+    <label for="accept"> Include Special Characters </label>
     <button id="gen-btn" onclick="generatePasswords()"><img src="images/bolt.png" alt="lightning bolt"> Generate passwords</button>
     <hr class="solid">
     <div id="passwordContainer">
         <input type="text" value="" id="password-1">
-        <button class="copy-btn" onclick="myFunction(1)">Copy password</button>
+        <button class="copy-btn" onclick="copyPassword(1)">Copy password</button>
         <input type="text" value="" id="password-2">
-        <button class="copy-btn" onclick="myFunction(2)">Copy password</button>
+        <button class="copy-btn" onclick="copyPassword(2)">Copy password</button>
         <input type="text" value="" id="password-3">
-        <button class="copy-btn" onclick="myFunction(3)">Copy password</button>
+        <button class="copy-btn" onclick="copyPassword(3)">Copy password</button>
         <input type="text" value="" id="password-4">
-        <button class="copy-btn" onclick="myFunction(4)">Copy password</button>
+        <button class="copy-btn" onclick="copyPassword(4)">Copy password</button>
     </div>
 </body>
 </html>
