@@ -47,7 +47,7 @@ slider.oninput = function() {
 }
 
 function copyPassword(i) {
-    let copyText = document.getElementById(`password-${1}`);
+    let copyText = document.getElementById(`password-${i}`);
   
     /* Select the text field */
     copyText.select();
